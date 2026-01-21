@@ -22,4 +22,8 @@ public class MemberService {
     public List<Member> getAllMembers() {
         return memberDao.findAll();
     }
+
+    public Member addMember(Member member) {
+        return memberDao.save(member);
+    }
 }
