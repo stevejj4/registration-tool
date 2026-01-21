@@ -13,9 +13,12 @@ import java.util.List;
 @RequestMapping("registered")
 public class RegistrationController {
 
-    //object for service
-    @Autowired
-    MemberService memberService;
+
+    private final MemberService memberService;
+
+    public RegistrationController(MemberService memberService){
+        this.memberService = memberService;
+    }
 
     @GetMapping("allMembers")
     public List<Member> getAllMembers(){

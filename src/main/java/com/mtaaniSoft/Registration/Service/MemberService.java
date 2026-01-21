@@ -9,10 +9,14 @@ import java.util.List;
 @Service
 public class MemberService {
 
-    @Autowired
-    MemberDao memberDao;
+    private final MemberDao memberDao;
+
+    public MemberService(MemberDao memberDao) {
+        this.memberDao = memberDao;
+    }
 
     public List<Member> getAllMembers() {
-       return memberDao.findAll();
+
+        return memberDao.findAll();
     }
 }
