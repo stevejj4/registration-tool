@@ -24,6 +24,6 @@ public class MemberService {
     }
 
     public Member addMember(Member member) {
-        return memberDao.save(member);
+        return memberDao.save(member); // after adding the member we need to save
     }
 }
