@@ -4,6 +4,7 @@ import com.mtaaniSoft.Registration.Model.Member;
 import com.mtaaniSoft.Registration.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,11 @@ public class RegistrationController {
     @GetMapping("allMembers")
     public List<Member> getAllMembers(){
         return memberService.getAllMembers(); // fetch members from database
+    }
+
+    @GetMapping("{idNumber}")
+    public List<Member> getMemberByIdNumber(@PathVariable String idNumber) {
+        return memberService.getMemberByIdNumber(idNumber); // fetch specific member in the database
     }
 
 }

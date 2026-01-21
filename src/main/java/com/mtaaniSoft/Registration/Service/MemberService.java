@@ -15,8 +15,11 @@ public class MemberService {
         this.memberDao = memberDao;
     }
 
-    public List<Member> getAllMembers() {
+    public List<Member> getMemberByIdNumber(String idNumber) {
+        return memberDao.findByIdNumber(idNumber);
+    }
 
+    public List<Member> getAllMembers() {
         return memberDao.findAll();
     }
 }
